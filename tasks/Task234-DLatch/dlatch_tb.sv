@@ -50,7 +50,16 @@ begin
 	check(1);
 
 	//Latching low : with input D LOW, pull EN HIGH then LOW - Q should remain LOW
-	// Write code below
+	// Write code below, 
+	D = 0;		//Set D LOW
+	check(0);	
+	EN=1;		//Enable HIGH (should latch a HIGH)
+	check(1);
+	EN=0;		//Enable LOW
+	check(1);
+	D = 1;		//Set D LOW (output should not change)
+	check(0);
+
 
 end
 	
