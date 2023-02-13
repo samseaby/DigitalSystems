@@ -399,6 +399,48 @@ https://fpgasoftware.intel.com/eula.
 	)
 	(annotation_block (parameter)(rect 656 -32 831 6))
 )
+(symbol
+	(rect 480 304 664 416)
+	(text "counterN" (rect 5 0 49 12)(font "Arial" ))
+	(text "inst2" (rect 8 96 31 108)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "CLK" (rect 0 0 21 12)(font "Arial" ))
+		(text "CLK" (rect 21 27 42 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "N_RESET" (rect 0 0 49 12)(font "Arial" ))
+		(text "N_RESET" (rect 21 43 70 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "DIR" (rect 0 0 20 12)(font "Arial" ))
+		(text "DIR" (rect 21 59 41 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64))
+	)
+	(port
+		(pt 184 32)
+		(output)
+		(text "Y[N-1..0]" (rect 0 0 46 12)(font "Arial" ))
+		(text "Y[N-1..0]" (rect 125 27 163 39)(font "Arial" ))
+		(line (pt 184 32)(pt 168 32)(line_width 3))
+	)
+	(parameter
+		"N"
+		"8"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(drawing
+		(rectangle (rect 16 16 168 96))
+	)
+	(annotation_block (parameter)(rect 664 264 840 304))
+)
 (connector
 	(pt 176 88)
 	(pt 200 88)
@@ -476,26 +518,6 @@ https://fpgasoftware.intel.com/eula.
 	(pt 264 504)
 )
 (connector
-	(text "led[1]" (rect 978 328 1006 345)(font "Intel Clear" ))
-	(pt 968 344)
-	(pt 1048 344)
-)
-(connector
-	(text "led[2]" (rect 978 352 1006 369)(font "Intel Clear" ))
-	(pt 968 368)
-	(pt 1048 368)
-)
-(connector
-	(text "led[3]" (rect 978 376 1006 393)(font "Intel Clear" ))
-	(pt 968 392)
-	(pt 1048 392)
-)
-(connector
-	(text "led[4]" (rect 978 400 1006 417)(font "Intel Clear" ))
-	(pt 968 416)
-	(pt 1048 416)
-)
-(connector
 	(pt 152 528)
 	(pt 256 528)
 )
@@ -509,29 +531,70 @@ https://fpgasoftware.intel.com/eula.
 	(pt 264 544)
 )
 (connector
-	(text "led[0]" (rect 978 304 1006 321)(font "Intel Clear" ))
+	(text "COUNT" (rect 322 528 357 545)(font "Intel Clear" ))
+	(pt 312 544)
+	(pt 352 544)
+)
+(connector
+	(text "CK2" (rect 442 320 462 337)(font "Intel Clear" ))
+	(pt 480 336)
+	(pt 432 336)
+)
+(connector
+	(text "key0" (rect 442 336 465 353)(font "Intel Clear" ))
+	(pt 480 352)
+	(pt 432 352)
+)
+(connector
+	(text "Y[7..0]" (rect 674 320 704 337)(font "Intel Clear" ))
+	(pt 768 336)
+	(pt 664 336)
+	(bus)
+)
+(connector
+	(text "Y[0]" (rect 978 304 998 321)(font "Intel Clear" ))
 	(pt 936 320)
 	(pt 1048 320)
 )
 (connector
-	(text "CK2" (rect 978 472 998 489)(font "Intel Clear" ))
-	(pt 936 488)
-	(pt 1048 488)
+	(text "Y[1]" (rect 978 328 998 345)(font "Intel Clear" ))
+	(pt 944 344)
+	(pt 1048 344)
 )
 (connector
-	(text "key0" (rect 978 424 1001 441)(font "Intel Clear" ))
-	(pt 936 440)
+	(text "Y[2]" (rect 978 352 998 369)(font "Intel Clear" ))
+	(pt 944 368)
+	(pt 1048 368)
+)
+(connector
+	(text "Y[3]" (rect 978 376 998 393)(font "Intel Clear" ))
+	(pt 944 392)
+	(pt 1048 392)
+)
+(connector
+	(text "Y[4]" (rect 978 400 998 417)(font "Intel Clear" ))
+	(pt 944 416)
+	(pt 1048 416)
+)
+(connector
+	(text "Y[5]" (rect 978 424 998 441)(font "Intel Clear" ))
+	(pt 944 440)
 	(pt 1048 440)
 )
 (connector
-	(text "SHIFT" (rect 978 448 1005 465)(font "Intel Clear" ))
-	(pt 936 464)
+	(text "Y[6]" (rect 954 448 974 465)(font "Intel Clear" ))
+	(pt 944 464)
 	(pt 1048 464)
 )
 (connector
-	(text "COUNT" (rect 322 528 357 545)(font "Intel Clear" ))
-	(pt 312 544)
-	(pt 352 544)
+	(text "Y[7]" (rect 978 472 998 489)(font "Intel Clear" ))
+	(pt 944 488)
+	(pt 1048 488)
+)
+(connector
+	(text "key1" (rect 442 352 465 369)(font "Intel Clear" ))
+	(pt 480 368)
+	(pt 432 368)
 )
 (junction (pt 520 40))
 (text "LEDs" (rect 1296 536 1325 555)(font "Intel Clear" (font_size 8)))
