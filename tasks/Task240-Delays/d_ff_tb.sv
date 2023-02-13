@@ -25,13 +25,13 @@ initial begin
 	@(negedge CLK);	//Wait for negative edge of clock
 	D = 1;		//Set D = 1
 	@(posedge CLK);	//Wait for positive edge of clock
-	#1 assert(Q == D) $display("PASS"); else $error("FAIL");	//Check Q
+	#10 assert(Q == D) $display("PASS"); else $error("FAIL");	//Check Q
 
 	//Test for when D = 0
 	@(negedge CLK);	//Wait for negative edge of clock
 	D = 0;		//Set D = 0
 	@(posedge CLK);	//Wait for negative edge of clock
-	#1 assert(Q == D) $display("PASS"); else $error("FAIL");	//Check Q
+	#10 assert(Q == D) $display("PASS"); else $error("FAIL");	//Check Q
 
 	//Test reset when D = 1
 	@(negedge CLK);	//Wait for negative edge of clock
@@ -40,9 +40,9 @@ initial begin
 	#1 assert(Q == D) $display("PASS"); else $error("FAIL");	//Check Q
 	#10ps;	
 	n_res = 0;
-	#15ps;
+	#10ps;
 	n_res = 1;
-	#1 assert(Q == 0) $display("RESET PASS"); else $error("RESET FAIL");	//Check Q
+	#10 assert(Q == 0) $display("RESET PASS"); else $error("RESET FAIL");	//Check Q
 
 	//Test D is ignored when reset
 	@(negedge CLK);	//Wait for negative edge of clock
@@ -52,7 +52,7 @@ initial begin
 	n_res = 0;
 	D = 1;
 	@(posedge CLK);	//Wait for positive edge of clock
-	#1 assert(Q == 0) $display("RESET PASS"); else $error("RESET FAIL");	//Check Q
+	#10 assert(Q == 0) $display("RESET PASS"); else $error("RESET FAIL");	//Check Q
 	@(negedge CLK);	//Wait for negative edge of clock
 	n_res = 1;
 	@(posedge CLK);	//Wait for positive edge of clock
@@ -61,7 +61,7 @@ initial begin
 end
 
 always @(negedge n_res) begin
-	#1 assert(Q == 0) $display("RESET PASS"); else $error("RESET FAIL");	//Check Q
+	#10 assert(Q == 0) $display("RESET PASS"); else $error("RESET FAIL");	//Check Q
 	
 end
 
