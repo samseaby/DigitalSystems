@@ -13,15 +13,40 @@ end
 
 initial begin
 
-   //Generate clock here   
-
+   //Generate clock here 
+  clk='1;
+  repeat(50) begin
+	#50ps
+	clk = ~clk;  
+  end
 end
 
 initial begin
-   x = '0;
+   x = 0;
    @(negedge clk);
-   
-   //Write tests here
+
+   @(posedge clk);
+   #1ps assert(Q_moore == Q_mealy) $display("Pass"); else $warning("Outputs differ");
+
+   @(negedge clk);
+   x = 1;
+
+   @(posedge clk);
+   #1ps assert(Q_moore == Q_mealy) $display("Pass"); else $warning("Outputs differ");
+
+   @(posedge clk);
+   #1ps assert(Q_moore == Q_mealy) $display("Pass"); else $warning("Outputs differ");
+
+   @(negedge clk);
+   x = 0;
+
+   @(posedge clk);
+   #1ps assert(Q_moore == Q_mealy) $display("Pass"); else $warning("Outputs differ");
+
+   @(posedge clk);
+   #1ps assert(Q_moore == Q_mealy) $display("Pass"); else $warning("Outputs differ");
+
+
 
 end
 
